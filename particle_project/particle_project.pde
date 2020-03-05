@@ -1,36 +1,23 @@
 PVector Position;
 PVector Velocity;
-//Particle par;
-Particle Par[] = new Particle [110];
-ArrayList<Particle> pList = new ArrayList<Particle>();
+ParticleSystem ps = new ParticleSystem(new PVector(400,410));
+//Particle Par[] = new Particle [115];
+//ArrayList<Particle> pList = new ArrayList<Particle>();
 
-
+ PImage sparkle; 
 void setup() {
-  size(800, 800);
+  size(800, 800,P3D);
+   sparkle = loadImage("yay.png");
+    sparkle.resize(300,300);
 
-  for (int i = 0; i< 110; i++)
-  {
-    pList.add(new Particle());
 
-    //Particle Par[] = new Particle [110];
-    //par = new Particle();
-    
-    }
-    for (int v = 0; v < 110; v++) {
-      Par[v] = new Particle();
-  }
 }
 void draw() {
-  background(116, 207, 255);
+  background(0);
 
-  for (int i = 0; i < 110; i++) {
-    Par[i].render();
-    Par[i].reload();
-
-    //if (Par.finished(); {
-    //  Par.remove(i);
-  }
-  //fill(160,29,44);
-  fill(252, 202, 161);
+  ps.DrawParticle();
+ 
+  //fill(252, 202, 161);
+  fill(193, 25, 6);
   triangle(400, 410, 250, 800, 550, 800);
 }
